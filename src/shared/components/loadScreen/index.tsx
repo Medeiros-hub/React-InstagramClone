@@ -9,13 +9,13 @@ export const LoadScreen = () => {
       <img 
         src={igRoundedLogo} 
         alt="Logo do Instagram" 
-        style={{width: '10vw'}}
+        style={{minWidth: '15%', maxWidth: '20%'}}
       />
       <img 
         id='metaLogo' 
         src={metaLogo} 
         alt="Logo da Meta" 
-        style={{width: '7vw'}}
+        style={{minWidth: '5%', maxWidth: '15%'}}
       />
     </Container>
   );
