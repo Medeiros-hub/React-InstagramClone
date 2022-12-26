@@ -1,5 +1,5 @@
 
-import { Button } from '../SideMenustyles';
+import { Button } from '../SideMenu.styles';
 
 interface ISideMenuItemProps {
   icon: React.ReactNode,

@@ -10,16 +10,26 @@ import { CgClapperBoard } from 'react-icons/cg';
 import { RiMessengerLine } from 'react-icons/ri';
 
 
-import { Div, Section, InputGroup } from './SideMenustyles';
+import { Div, Section, InputGroup } from './SideMenu.styles';
 import SideMenuItem from './SideMenuItem';
 import { useState } from 'react';
 
 
-export const MenuLateral: React.FC = () => {
+export const MenuLateral: React.FC = (): JSX.Element => {  
+  const [ wordInput, setwordInput ] = useState<string>('');
 
-  const searchIconTop: HTMLElement = (document.getElementById('search-icon-top') as HTMLElement);
-  
-  const [ message, setMessage ] = useState('');
+
+  const handleFilter = ({
+    target
+  }: React.ChangeEvent<HTMLInputElement>): void => {
+    const searchWord: string = target.value.toLowerCase();
+    setwordInput(searchWord);
+  };
+
+  const clearInput = ():void => {
+    setwordInput('');
+  };
+
 
   return (
     <Div>
@@ -33,17 +43,23 @@ export const MenuLateral: React.FC = () => {
           </div>
           <aside>
             <InputGroup>
-              <BsSearch id='search-icon-top' />
+              <div className='search-icon-top'>
+                {wordInput.length == 0 && (
+                  <BsSearch />
+                )}
+              </div>
               <input 
                 id='input-search' 
                 type="text" 
-                value={message} 
+                value={wordInput} 
                 placeholder='Pesquisar'
-                onChange={e => setMessage(e.target.value)}
-                onFocus={() => searchIconTop.style.display = 'none'}
-                onBlur={() => searchIconTop.style.display = ''}
+                onChange={handleFilter}
               />
-              <AiOutlineCloseCircle onClick={() => setMessage('')} />
+              <div className='close-icon-top'>
+                {wordInput.length !== 0 && (
+                  <AiOutlineCloseCircle onClick={clearInput} />
+                )}
+              </div>
             </InputGroup>
             <SideMenuItem icon={<AiOutlineHeart />} text='Notificações' className='heart-icon-top' />
           </aside>

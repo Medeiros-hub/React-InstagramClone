@@ -1,6 +1,6 @@
 import igRoundedLogo from '../../../assets/img/igRoundedIcon_.png';
 import metaLogo from '../../../assets/img/metaLogo.png';
-import { Container } from './loadScreenStyled';
+import { Container } from './loadScreen.styles';
 
 
 export const LoadScreen = () => {
@@ -9,7 +9,7 @@ export const LoadScreen = () => {
       <img 
         src={igRoundedLogo} 
         alt="Logo do Instagram" 
-        style={{minWidth: '15%', maxWidth: '20%'}}
+        style={{minWidth: '5%', maxWidth: '130px'}}
       />
       <img 
         id='metaLogo' 

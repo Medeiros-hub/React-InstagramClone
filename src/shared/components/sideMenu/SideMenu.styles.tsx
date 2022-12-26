@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import styleComponents from '../../../assets/styles/stylesComponents';
+import styleComponents from '../../../assets/styles/stylesComponents.styles';
 
 
 const size = '250px';
@@ -22,7 +22,7 @@ export const Div = styled.div`
       max-width: 100px;
     }
   
-    div:last-child {
+    & > div:last-child {
       position: relative;
       bottom: 20px;
     }
@@ -99,6 +99,7 @@ export const Div = styled.div`
       }
 
       aside {
+        margin-right: 20px;
         display: flex;
         position: absolute;
         right: 0;
@@ -194,12 +195,8 @@ export const InputGroup = styled.div`
       background-color: ${styleComponents.backgroundColor};
       color: #fff;
       border-radius: 5px;
-      padding: 12px 20px;
+      padding: 12px 35px;
       min-width: 230px;
-
-      ::placeholder {
-        padding-left: 20px;
-      }
     }
   }
 `;

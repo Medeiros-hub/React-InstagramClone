@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import colors from './stylesComponents';
-import fonts from './fonts';
+import colors from './stylesComponents.styles';
+import fonts from './fonts.styles';
 
 
 export default createGlobalStyle`

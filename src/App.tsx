@@ -1,4 +1,4 @@
-import GlobalStyles from './assets/styles/global';
+import GlobalStyles from './assets/styles/global.styles';
 import AppRoutes from './Routes';
 
 import { LoadScreen } from './shared/components/loadScreen';
@@ -15,8 +15,7 @@ function App() {
   }, []);
   
 
-  return isLoading ? <LoadScreen /> :
-  
+  return isLoading ? <LoadScreen /> :  
     (
       <>
         <GlobalStyles />
