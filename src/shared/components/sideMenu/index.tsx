@@ -1,5 +1,5 @@
 // LOGO
-import logoBlack from './../../../assets/img/instagramLogoBlack.png';
+// import logoBlack from './../../../assets/img/instagramLogoBlack.png';
 import logoWhite from './../../../assets/img/instagramLogoWhite.png';
 
 // ICONS
@@ -12,7 +12,7 @@ import { RiMessengerLine } from 'react-icons/ri';
 
 import { Div, Section, InputGroup } from './SideMenustyles';
 import SideMenuItem from './SideMenuItem';
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 
 
 export const MenuLateral: React.FC = () => {
