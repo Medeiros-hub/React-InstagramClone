@@ -16,6 +16,9 @@ import { useState } from 'react';
 
 
 export const MenuLateral: React.FC = () => {
+
+  const searchIconTop: HTMLElement = (document.getElementById('search-icon-top') as HTMLElement);
+  
   const [ message, setMessage ] = useState('');
 
   return (
@@ -25,18 +28,20 @@ export const MenuLateral: React.FC = () => {
           <div style={{marginBottom: '35px', padding: '0 15px', cursor: 'pointer'}}>
             <a href="/" >
               <img src={logoWhite} alt="Logo Instagram" />
-              <SideMenuItem  icon={<AiOutlineInstagram />} text='' className='logo-icon' />
+              <SideMenuItem icon={<AiOutlineInstagram />} text='' className='logo-icon' />
             </a>
           </div>
           <aside>
             <InputGroup>
-              <BsSearch className='search-icon-top' />
+              <BsSearch id='search-icon-top' />
               <input 
                 id='input-search' 
                 type="text" 
                 value={message} 
                 placeholder='Pesquisar'
                 onChange={e => setMessage(e.target.value)}
+                onFocus={() => searchIconTop.style.display = 'none'}
+                onBlur={() => searchIconTop.style.display = ''}
               />
               <AiOutlineCloseCircle onClick={() => setMessage('')} />
             </InputGroup>

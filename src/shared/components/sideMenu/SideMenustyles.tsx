@@ -100,6 +100,8 @@ export const Div = styled.div`
 
       aside {
         display: flex;
+        position: absolute;
+        right: 0;
         justify-content: center;
         align-items: center;
         gap: 20px;
@@ -170,6 +172,7 @@ export const InputGroup = styled.div`
 
     & > *:not(input[type="text"]) {
       position: absolute;
+      margin: 0 10px;
     }
 
     & > :first-child {
@@ -194,7 +197,9 @@ export const InputGroup = styled.div`
       padding: 12px 20px;
       min-width: 230px;
 
-      
+      ::placeholder {
+        padding-left: 20px;
+      }
     }
   }
 `;
